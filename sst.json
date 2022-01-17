@@ -1,0 +1,5 @@
+{
+  "name": "sst-ms-template",
+  "region": "eu-central-1",
+  "main": "stacks/index.js"
+}

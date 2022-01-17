@@ -1,0 +1,21 @@
+{
+  "prod-sst-test-topic": {
+    "arn": "arn:aws:sns:eu-central-1:899888592127:prod-sst-test-topic"
+  },
+  "prod-sst-test-table": {
+    "arn": "arn:aws:sqs:eu-central-1:899888592127:prod-sst-test-failover-queue",
+    "url": "https://sqs.eu-central-1.amazonaws.com/899888592127/prod-sst-test-failover-queue"
+  },
+  "prod-sst-test-dlq": {
+    "arn": "arn:aws:sqs:eu-central-1:899888592127:prod-sst-test-dlq",
+    "url": "https://sqs.eu-central-1.amazonaws.com/899888592127/prod-sst-test-dlq"
+  },
+  "prod-sst-test-api": {
+    "createarn": "arn:aws:lambda:eu-central-1:899888592127:function:prod-sst-test-api-putHandlerFE01D35E-tSz0QzXUnHrM",
+    "url": "https://gpshjpwgvi.execute-api.eu-central-1.amazonaws.com"
+  },
+  "prod-sst-test-asyncApi": {
+    "createasyncarn": "arn:aws:lambda:eu-central-1:899888592127:function:prod-sst-test-asyncApi-createAsync1DF6D60F-w6ZdxYnJKkKk",
+    "asyncurl": "https://82aq1alw5h.execute-api.eu-central-1.amazonaws.com/async"
+  }
+}
