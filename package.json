@@ -2,6 +2,7 @@
   "name": "sst-ms-template",
   "version": "0.1.0",
   "description": "Structure to create a microservice on AWS using sst-serverless stack",
+  "repository": "github:wintvelt/sst-ms-template",
   "keywords": [
     "aws",
     "microservice",
