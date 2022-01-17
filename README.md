@@ -11,18 +11,27 @@ Basic steps to get going:
     - open terminal in that folder
     - clone this repo: `git clone https://github.com/wintvelt/sst-test.git .`
     - remove the `.git` folder
-    - `git init`
 2. Set the name of your own package
-    - open `package.json` and change the name of your service, and version number
+    - open `package.json` and change 
+        - name of your service
+        - version number
+        - description
+        - keywords
+        - repository
     - also change the name in `sst.json` - this will be used in all infra stacks (lambda etc)
+    - `git init`
 3. Initial commit (locally) , via vscode direct, or
     - `git add .`
     - `git commit -m "Initial commit"`
-4. Create the remote origin - via vscode direct, or
-    - on github site, create a new repo
-    - locally: `git remote add origin [your new github repo url]`
-    - `git push -u --force origin main`
-    - best to create a public repo, if you want free use of GitKraken to view branche structure
+4. Create the remote origin
+    - via VSCode direct:
+        - sync the repo, and choose the type of remote repo
+        - vscode will raise an error, whcih you can ignore 😉
+    - or manually:
+        - on github site, create a new repo
+        - locally: `git remote add origin [your new github repo url]`
+        - `git push -u --force origin main`
+        - best to create a public repo, if you want free use of GitKraken to view branche structure
     - vscode publishing will not trigger workflow, subsequent commits will. Their test runs will fail until secrets are set
 5. Set the secrets
     - following secrets need to be set in github repo
