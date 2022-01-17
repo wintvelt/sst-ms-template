@@ -1,7 +1,6 @@
 {
   "name": "sst-ms-template",
   "version": "0.1.0",
-  "private": true,
   "description": "Structure to create a microservice on AWS using sst-serverless stack",
   "keywords": [
     "aws",
