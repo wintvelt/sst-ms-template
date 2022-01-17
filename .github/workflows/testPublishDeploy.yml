@@ -37,7 +37,7 @@ jobs:
         then
           if [ "$(ls -A $DIR)" ]; then
             echo "Running tests for $DIR"
-            sst test --passWithNoTests test/pre-deploy/*.test.*
+            npx sst test --passWithNoTests test/pre-deploy/*.test.*
           else
             echo "$DIR is Empty"
           fi
@@ -127,7 +127,7 @@ jobs:
           then
             if [ "$(ls -A $DIR)" ]; then
               echo "Running tests for $DIR"
-              sst test --passWithNoTests test/post-deploy/*.test.*
+              npx sst test --passWithNoTests test/post-deploy/*.test.*
             else
               echo "$DIR is Empty"
             fi
@@ -143,7 +143,7 @@ jobs:
           then
             if [ "$(ls -A $DIR)" ]; then
               echo "Running tests for $DIR"
-              sst test --passWithNoTests test/post-deploy-with-updates/*.test.*
+              npx sst test --passWithNoTests test/post-deploy-with-updates/*.test.*
             else
               echo "$DIR is Empty"
             fi
