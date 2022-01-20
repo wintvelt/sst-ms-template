@@ -23,10 +23,14 @@ Basic steps to get going:
         - keywords
         - repository
     - also change the name in `sst.json` - this will be used in all infra stacks (lambda etc)
-    - `git init`
-3. Initial commit (locally) , via vscode direct, or
-    - `git add .`
-    - `git commit -m "Initial commit"`
+    - and change link to badge in top of `readme.md` file
+3. Initial commit (locally)
+    - via vscode direct, 
+        - in Source control, click publish and name repo
+    - or manually
+        - `git init`
+        - `git add .`
+        - `git commit -m "Initial commit"`
 4. Create the remote origin
     - via VSCode direct:
         - sync the repo, and choose the type of remote repo
