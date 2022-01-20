@@ -5,11 +5,9 @@ export const inputSchema = {
         body: {
             type: 'object',
             properties: {
-                ownerName: { type: 'string', pattern: '.+/{1}.+' }, // string with 1 slash
-                stage: { type: 'string', enum: ['prod', 'dev'] },
-                pack: { type: 'object' },
+                sender: { type: 'string' }
             },
-            required: ['ownerName', 'stage', 'pack']
+            required: ['sender']
         }
     }
 }

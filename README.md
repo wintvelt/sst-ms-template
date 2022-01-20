@@ -61,7 +61,7 @@ The general idea is that a microservice
 - includes a github action workflow, that runs tests and deploys (only if on branch main or dev)
 - the workflow also calls a public API, to publish all dependencies
 
-This template contains all the basics, for posting (and retrieving) microservice dependencies. Inner workings described [in another readme doc](assets/DepenencyPubReadMe.md).
+This template contains a very basic setup, with a simple POST API. More components can be found for example in the [publishing microservice sst-test](https://github.com/wintvelt/sst-test).
 
 ## APIs and Event streams
 The microservice is responsible for:
@@ -79,10 +79,11 @@ It is up to the processing (receiving) microservice to
 - (optionally) setup an SQS queue connected to the SNS topic to consume events
 
 ## Service structure
-Service structure is typically as follows
+Service structure in this example is as follows
+
 ![microservice structure](/stackdef/stackdef.png)
 
-Notes
+Notes when defining/ building your own stack:
 - Only 1 version of npm package is available, published from main branch. Stage (dev or prod) can be passed as a parameter to most functions exposed in package.
 - Some private functions may be exposed in npm package too. The consuming service needs to have sufficient authorization to access the infrastructure (database, queues etc) from these clients.
     - advantage is that services on the same (AWS) infrastructure can access each other within the infrastructure - calling `AWS.lambda.invoke()`, without the detour through public access
@@ -145,13 +146,6 @@ Github repo needs to have the following secrets - they are accessed and used by 
 - `AWS_SECRET_ACCESS_KEY`
 - `SECRET_PUBLISH_TOKEN`: Basic token used to publish dependencies to a common shared service
 - `NPM_TOKEN`: Token to allow publication of client npm package to npm registry
-
-*THIS SHOULD BE UPDATED maybe more*
-In the `.github/workflows` yml doc, the following env var for publishing dependencies
-- this one you can delete: `DEV_PUBLISH_ENDPOINT`: hardcoded url of API endpoint to publish dependencies - only used for the dependency-service
-- should stay in: `PROD_PUBLISH_ENDPOINT`: url for dependencies when on main branch (= prod stage)
-Your service will always publish to the prod endpoint. Also when on dev branch.
-- you should also change the other dev_publish references to prod_publish
 
 Other environment variables in backend functions can only be set in stack definition. E.g. the dynamoDb tablename needs to be set in API Gateway for the handler function to access `process.env.TABLE_NAME`. And all stack entities (tables, queues, etc) should be set as environment variables, because the name depends on the stage (dev or prod).
 
