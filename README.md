@@ -1,17 +1,19 @@
 # Serverless microservice setup
 ![full workflow](https://github.com/wintvelt/sst-ms-template/actions/workflows/testPublishDeploy.yml/badge.svg)
 
+*The automated CI/CD workflow of this template does not work, because the secrets in this repo are not set. Explanation [here](#how-to-use)*
+
 This project was bootstrapped with [Create Serverless Stack](https://docs.serverless-stack.com/packages/create-serverless-stack).
 Quite heavily adapted though, for personal microservice setup on AWS with github actions CI/CD.
 
-An example is explained in [separate readme doc here](assets/DependencyPubReadMe.md)
+This template is a basic example. More elaborate examples can be found in the [sst-test repo](https://github.com/wintvelt/sst-test.git)
 
 ## How to use
 Basic steps to get going:
 1. Setup a new local repo with a clone of this template
     - create a new folder on your machine
     - open terminal in that folder
-    - clone this repo: `git clone https://github.com/wintvelt/sst-test.git .`
+    - clone this repo: `git clone https://github.com/wintvelt/sst-ms-template.git .`
     - remove the `.git` folder
 2. Set the name of your own package
     - open `package.json` and change 
