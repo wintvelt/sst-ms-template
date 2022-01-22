@@ -1,5 +1,5 @@
 import * as sst from "@serverless-stack/resources";
-import * as cdk from "@aws-cdk/core"
+import * as cdk from "aws-cdk-lib"
 
 const routeNames = {
     put: "PUT   /",
