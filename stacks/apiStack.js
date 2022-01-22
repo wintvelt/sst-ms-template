@@ -28,9 +28,12 @@ export default class ApiStack extends sst.Stack {
             },
         });
 
+        // to autotrace lambda in lumigo
         this.getAllFunctions().forEach(fn =>
             cdk.Tags.of(fn).add("lumigo:auto-trace", "true")
         )
+        // for tracing of API in logz.io (lumigo does not track api, so misses gateway errors)
+        cdk.Tags.of(this).add("logz:trace", "true")
 
         const outputs = {
             "url": this.api.url,
